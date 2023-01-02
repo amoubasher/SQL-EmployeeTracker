@@ -118,7 +118,8 @@ async function deleteEmployee() {
             }
         ])
         await db.query(`DELETE FROM employee WHERE id = ${id}`)
-        return await viewAllEmployees();
+        const updatedEmployees = await viewAllEmployees();
+        return await updatedEmployees;
     } catch (err) {
         console.log(err)
     }

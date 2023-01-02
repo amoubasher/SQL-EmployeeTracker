@@ -68,7 +68,11 @@ const start = async () => {
             const deletedRole = await deleteRole();
             console.table(deletedRole)
             break;
+        case 'Exit':
+            console.log("Goodbye!");
+            process.exit();
     }
+    start(false);
 }
 
-start();
+start(true);
